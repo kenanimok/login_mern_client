@@ -3,6 +3,9 @@ import Admin from "./pages/adminpage/admin";
 import Login from "./pages/auth/login";
 import { useDispatch } from "react-redux";
 import { currentUser } from "./core/action/auth";
+import UserRoute from "./routes/UserRoute";
+import Userpage from "./pages/userpage/user";
+import AdminRoute from "./routes/AminRoute";
 import Xx from "./xx";
 function App() {
   const idtoken = localStorage.token;
@@ -28,7 +31,22 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Xx />} />
-      <Route path="/admin" element={<Admin />} />
+      <Route
+        path="/admin/index"
+        element={
+          <AdminRoute>
+            <Admin />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/user/index"
+        element={
+          <UserRoute>
+            <Userpage />
+          </UserRoute>
+        }
+      />
       <Route path="/login" element={<Login />} />
     </Routes>
   );
