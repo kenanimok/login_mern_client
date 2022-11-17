@@ -1,23 +1,42 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { login } from "../../core/action/auth";
+import { useDispatch } from "react-redux";
 const Login = () => {
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const roleRedirect = (role) => {
+    if (role === "admin") {
+      navigate("/admin/index");
+    } else {
+      navigate("/user/index");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/api/login", user);
+      const res = await login(user);
       console.log(res);
-      navigate("/admin");
+      dispatch({
+        type: "LOGIN",
+        payload: {
+          token: res.data.token,
+          username: res.data.payload.user.username,
+          role: res.data.payload.user.role,
+        },
+      });
+      localStorage.setItem("token", res.data.token);
+      roleRedirect(res.data.payload.user.role);
     } catch (err) {
-      alert("err");
+      console.log(err);
     }
   };
 
