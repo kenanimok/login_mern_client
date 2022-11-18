@@ -7,3 +7,11 @@ export const listUser = async (authtoken) => {
     },
   });
 };
+
+export const changeRole = async (authtoken, value) => {
+  return await axios.post(process.env.REACT_APP_API + "/change-role", value, {
+    headers: {
+      authtoken,
+    },
+  });
+};
