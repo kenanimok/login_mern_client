@@ -7,6 +7,7 @@ import UserRoute from "./routes/UserRoute";
 import Userpage from "./pages/userpage/user";
 import AdminRoute from "./routes/AminRoute";
 import Xx from "./xx";
+// import Modalnew from "./components/modal/modalform";
 function App() {
   const idtoken = localStorage.token;
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ function App() {
   }
   return (
     <Routes>
-      <Route path="/" element={<Xx />} />
       <Route
         path="/admin/index"
         element={
@@ -47,7 +47,8 @@ function App() {
           </UserRoute>
         }
       />
-      <Route path="/login" element={<Login />} />
+      {/* <Route path="/modalnew" element={<Modalnew />} /> */}
+      <Route path="/" element={<Login />} />
     </Routes>
   );
 }

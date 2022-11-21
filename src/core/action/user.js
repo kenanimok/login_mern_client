@@ -8,10 +8,28 @@ export const listUser = async (authtoken) => {
   });
 };
 
-export const changeRole = async (authtoken, value) => {
-  return await axios.post(process.env.REACT_APP_API + "/change-role", value, {
+export const changeRole = async (record, role, authtoken) => {
+  const data = {
+    _id: record._id,
+    role: role,
+  };
+  console.log("data", data);
+  return await axios.put(process.env.REACT_APP_API + "/role", data, {
     headers: {
       authtoken,
     },
   });
+};
+
+export const changeEnable = async (record, status) => {
+  const data = {
+    _id: record._id,
+    enabled: status,
+  };
+  return await axios.put(process.env.REACT_APP_API + "/status", data);
+};
+
+export const deletUser = async (record) => {
+  const _id = record._id;
+  return await axios.delete(process.env.REACT_APP_API + "/remove/" + _id);
 };

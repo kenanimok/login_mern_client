@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootReducer from "./components/reducer";
-import "antd/dist/antd.min.css";
+// import "antd/dist/antd.min.css";
+import "antd/dist/reset.css";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = createStore(rootReducer);
 
