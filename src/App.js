@@ -7,14 +7,12 @@ import UserRoute from "./routes/UserRoute";
 import Userpage from "./pages/userpage/user";
 import AdminRoute from "./routes/AminRoute";
 import Xx from "./xx";
-// import Modalnew from "./components/modal/modalform";
 function App() {
   const idtoken = localStorage.token;
   const dispatch = useDispatch();
   if (idtoken) {
     currentUser(idtoken)
       .then((res) => {
-        // console.log(res.data);
         dispatch({
           type: "LOGIN",
           payload: {

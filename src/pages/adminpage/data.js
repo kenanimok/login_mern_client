@@ -3,9 +3,7 @@ import { useState } from "react";
 import { changeEnable } from "../../core/action/user";
 import { deletUser } from "../../core/action/user";
 import { changeRole } from "../../core/action/user";
-// import Modalform from "../../components/modal/modalform";
 import { Button, Select, Modal, Checkbox, Form, Input } from "antd";
-import axios from "axios";
 import Modalform from "../../components/modal/modalform";
 export const columns = [
   {
@@ -87,9 +85,6 @@ export const columns = [
     render: (_, record) => (
       <>
         <Modalform record={record} />
-        {/* <Button type="primary" onClick={() => ShowUserUpdate(record)}>
-          update
-        </Button> */}
       </>
     ),
   },

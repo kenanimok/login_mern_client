@@ -9,7 +9,6 @@ import { listUser } from "../../core/action/user";
 import { columns } from "./data";
 const Admin = () => {
   const [datauser, setDataUser] = useState();
-  console.log("datauser", datauser);
   const { user } = useSelector((state) => ({ ...state }));
 
   const navigate = useNavigate();
