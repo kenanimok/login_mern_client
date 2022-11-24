@@ -15,51 +15,9 @@ function App() {
   const [user, setUser] = useState(sessionStorage.user || null);
   const valueUser = { user, setUser };
 
-  // const idtoken = localStorage.token;
-  // const dispatch = useDispatch();
-  // if (idtoken) {
-  //   currentUser(idtoken)
-  //     .then((res) => {
-  //       dispatch({
-  //         type: "LOGIN",
-  //         payload: {
-  //           token: idtoken,
-  //           username: res.data.username,
-  //           role: res.data.role,
-  //         },
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       //err
-  //       console.log(err);
-  //     });
-
   return (
-    // <Routes>
-    //   <Route
-    //     path="/admin/index"
-    //     element={
-    //       <AdminRoute>
-    //         <Admin />
-    //       </AdminRoute>
-    //     }
-    //   />
-    //   <Route
-    //     path="/user/index"
-    //     element={
-    //       <UserRoute>
-    //         <Userpage />
-    //       </UserRoute>
-    //     }
-    //   />
     <UserContext.Provider value={valueUser}>
       <Routes>
-        {/* <Route path="/" element={<Privateroute />}>
-        <Route path="/admin/index" element={<Admin />} />
-      </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="*" element={<Pagenotfound />} /> */}
-
         <Route element={<Privateroute />}>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Homepage />} />
