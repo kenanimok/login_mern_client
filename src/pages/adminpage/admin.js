@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { Button, Table } from "antd";
 import { listUser } from "../../core/action/user";
 import { columns } from "./data";
+import Sidebar from "../../components/Layout/sidebar/sidebar";
 const Admin = () => {
   const [datauser, setDataUser] = useState();
   const { user } = useSelector((state) => ({ ...state }));
@@ -18,7 +19,7 @@ const Admin = () => {
 
   const logout = () => {
     localStorage.clear();
-    navigate("/");
+    navigate("/login");
   };
 
   const getUser = () => {
@@ -34,7 +35,6 @@ const Admin = () => {
   return (
     <>
       <Button onClick={logout}>logout</Button>
-
       <Container>
         <Table columns={columns} dataSource={datauser} />
       </Container>

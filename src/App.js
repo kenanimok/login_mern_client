@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Admin from "./pages/adminpage/admin";
 import Login from "./pages/auth/login";
 import { useDispatch } from "react-redux";
@@ -7,45 +7,27 @@ import UserRoute from "./routes/UserRoute";
 import Userpage from "./pages/userpage/user";
 import AdminRoute from "./routes/AminRoute";
 import Xx from "./xx";
+import Sidebar from "./components/Layout/sidebar/sidebar";
+import ProtectedRoute from "./routes/proteced.route";
+import Corelayout from "./components/Layout/corelayout";
 function App() {
-  const idtoken = localStorage.token;
-  const dispatch = useDispatch();
-  if (idtoken) {
-    currentUser(idtoken)
-      .then((res) => {
-        dispatch({
-          type: "LOGIN",
-          payload: {
-            token: idtoken,
-            username: res.data.username,
-            role: res.data.role,
-          },
-        });
-      })
-      .catch((err) => {
-        //err
-        console.log(err);
-      });
-  }
   return (
     <Routes>
-      <Route
-        path="/admin/index"
-        element={
-          <AdminRoute>
-            <Admin />
-          </AdminRoute>
-        }
-      />
-      <Route
-        path="/user/index"
-        element={
-          <UserRoute>
-            <Userpage />
-          </UserRoute>
-        }
-      />
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      //protect
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<Corelayout />}>
+          <Route path="/" element={<Navigate to="/admin/index" />} />
+          <Route
+            path="/admin/index"
+            element={
+              <AdminRoute>
+                <Admin />
+              </AdminRoute>
+            }
+          />
+        </Route>
+      </Route>
     </Routes>
   );
 }

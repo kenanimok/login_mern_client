@@ -10,7 +10,7 @@ const LoadingToredirec = () => {
       setCount((curentcount) => --curentcount);
     }, 1000);
 
-    count === 0 && navigate("/");
+    count === 0 && navigate("/login");
     return () => clearInterval(interval);
   }, [count]);
 
