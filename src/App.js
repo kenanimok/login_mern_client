@@ -45,7 +45,6 @@ function App() {
           </UserRoute>
         }
       />
-      {/* <Route path="/modalnew" element={<Modalnew />} /> */}
       <Route path="/" element={<Login />} />
     </Routes>
   );
