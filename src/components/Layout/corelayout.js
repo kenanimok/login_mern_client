@@ -5,7 +5,7 @@ import Header from "./Header/Header";
 import Content from "./Content/Content";
 const Corelayout = () => {
   return (
-    <div style={{ display: "flex", backgroundColor: "#f6f6f6" }}>
+    <div style={{ display: "flex", backgroundColor: "" }}>
       <Sidebar />
       <div
         style={{

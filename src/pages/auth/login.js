@@ -58,7 +58,8 @@ const Login = () => {
         <Container>
           <FormBox>
             <Title>Login Form</Title>
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}> */}
+            <form>
               <Inputbox
                 type="text"
                 name="username"
@@ -72,7 +73,7 @@ const Login = () => {
                 onChange={handleChange}
               ></Inputbox>
               <Conbtn>
-                <Submit type="submit">Login</Submit>
+                <Button onClick={handleSubmit}>Login</Button>
                 <Button>Register</Button>
               </Conbtn>
             </form>
@@ -91,6 +92,7 @@ const Section = styled.div`
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
+  /* background-image: url("https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"); */
 
   .box {
     position: relative;

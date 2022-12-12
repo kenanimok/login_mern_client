@@ -10,6 +10,8 @@ import Xx from "./xx";
 import Sidebar from "./components/Layout/sidebar/sidebar";
 import ProtectedRoute from "./routes/proteced.route";
 import Corelayout from "./components/Layout/corelayout";
+import Dashboard from "./pages/dashboard/dashboard";
+import "./main.css";
 function App() {
   return (
     <Routes>
@@ -26,6 +28,8 @@ function App() {
               </AdminRoute>
             }
           />
+          <Route path="/user" element={<Userpage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Route>
     </Routes>

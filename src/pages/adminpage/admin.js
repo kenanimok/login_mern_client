@@ -35,8 +35,10 @@ const Admin = () => {
   return (
     <>
       <Button onClick={logout}>logout</Button>
+
       <Container>
         <Table columns={columns} dataSource={datauser} />
+        {/* <Boxglass /> */}
       </Container>
     </>
   );
@@ -49,4 +51,14 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+`;
+
+const Boxglass = styled.div`
+  width: 500px;
+  height: 500px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
 `;
