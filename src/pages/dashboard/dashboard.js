@@ -13,6 +13,11 @@ import {
 } from "./dashboard.style";
 
 import { colors, Bgcolor, Ftcolor } from "./dashboard.style";
+import * as XLSX from "xlsx-js-style";
+import { saveAs } from "file-saver";
+import { renderToString } from "react-dom/server";
+import jsPDF from "jspdf";
+import { columnsReport } from "./data";
 
 const Dashboard = () => {
   return (

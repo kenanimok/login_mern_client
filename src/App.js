@@ -11,6 +11,7 @@ import Sidebar from "./components/Layout/sidebar/sidebar";
 import ProtectedRoute from "./routes/proteced.route";
 import Corelayout from "./components/Layout/corelayout";
 import Dashboard from "./pages/dashboard/dashboard";
+import Reporthuman from "./pages/report/reporthuman";
 import "./main.css";
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           />
           <Route path="/user" element={<Userpage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/report" element={<Reporthuman />} />
         </Route>
       </Route>
     </Routes>

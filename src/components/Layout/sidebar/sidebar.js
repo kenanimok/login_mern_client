@@ -7,6 +7,7 @@ import { AiFillBank } from "react-icons/ai";
 import { Row, Col } from "antd";
 import { GiAbstract009 } from "react-icons/gi";
 import { AiFillAlert } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [toogle, setToogle] = useState(false);
@@ -27,7 +28,9 @@ const Sidebar = () => {
             <div style={{ marginLeft: "10px" }}>
               <AiFillAlert size={25} style={{ color: "blue" }} />
             </div>
-            <Textmenu toogle={toogle}>Dashboard</Textmenu>
+            <Textmenu toogle={toogle}>
+              <Link to="/report"> Report</Link>
+            </Textmenu>
           </Boxmenu>
         </Menu>
 
