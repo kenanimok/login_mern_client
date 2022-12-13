@@ -31,6 +31,23 @@ const Excel = () => {
       });
     }
   });
+  const data = useMemo(() => newData, []);
+  const columns = useMemo(() => columnsReport, []);
+
+  const tdStyle = {
+    padding: "1px",
+    border: "1px solid black",
+    textAlign: "center",
+  };
+  const thStyle = { padding: "5px", border: "1px solid black" };
+
+  const getRowsData = (listData) => {
+    let keys = listData.reduce((a, e) => {
+      let esKey = e["pos"];
+      a[esKey];
+    }, {});
+  };
+
   return <></>;
 };
 export default Excel;
