@@ -8,7 +8,13 @@ import { Row, Col } from "antd";
 import { GiAbstract009 } from "react-icons/gi";
 import { AiFillAlert } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
+import {
+  AiOutlineApartment,
+  AiOutlineHome,
+  AiOutlineLeft,
+  AiOutlineSearch,
+  AiOutlineSetting,
+} from "react-icons/ai";
 const Sidebar = () => {
   const [toogle, setToogle] = useState(false);
 
@@ -18,66 +24,16 @@ const Sidebar = () => {
 
   return (
     <>
-      <Sidenav toogle={toogle}>
-        <Boxlogo toogle={toogle} onClick={ontoogle}>
-          <VscOctoface size={205} />
-        </Boxlogo>
-
-        <Menu>
-          <Boxmenu>
-            <div style={{ marginLeft: "10px" }}>
-              <AiFillAlert size={25} style={{ color: "blue" }} />
-            </div>
-            <Textmenu toogle={toogle}>
-              <Link to="/report"> Report</Link>
-            </Textmenu>
-          </Boxmenu>
-        </Menu>
-
-        <Menu>
-          <Boxmenu>
-            <div style={{ marginLeft: "10px" }}>
-              <GiAbstract009 size={25} />
-            </div>
-            <Textmenu toogle={toogle}>Dashboard</Textmenu>
-          </Boxmenu>
-        </Menu>
-
-        <Menu>
-          <Boxmenu>
-            <div style={{ marginLeft: "10px" }}>
-              <AiFillAlert size={25} />
-            </div>
-            <Textmenu toogle={toogle}>Dashboard</Textmenu>
-          </Boxmenu>
-        </Menu>
-
-        <Menu>
-          <Boxmenu>
-            <div style={{ marginLeft: "10px" }}>
-              <AiFillAlert size={25} />
-            </div>
-            <Textmenu toogle={toogle}>Dashboard</Textmenu>
-          </Boxmenu>
-        </Menu>
-
-        <Menu>
-          <Boxmenu>
-            <div style={{ marginLeft: "10px" }}>
-              <AiFillAlert size={25} />
-            </div>
-            <Textmenu toogle={toogle}>Dashboard</Textmenu>
-          </Boxmenu>
-        </Menu>
-
-        <Menu>
-          <Boxmenu>
-            <div style={{ marginLeft: "10px" }}>
-              <AiFillAlert size={25} />
-            </div>
-            <Textmenu toogle={toogle}>Dashboard</Textmenu>
-          </Boxmenu>
-        </Menu>
+      <Sidenav toogle={toogle} onClick={ontoogle}>
+        <SDivider>
+          <SLinkContainer>
+            <SLink to="/dashboard">
+              <SLinkIcon>
+                <AiOutlineSetting />
+              </SLinkIcon>
+            </SLink>
+          </SLinkContainer>
+        </SDivider>
       </Sidenav>
     </>
   );
@@ -85,35 +41,47 @@ const Sidebar = () => {
 
 export default Sidebar;
 const Sidenav = styled.div`
-  width: ${(props) => (props.toogle ? "300px" : `100px`)};
-  padding: 6px;
+  /* width: ${(props) => (props.toogle ? "300px" : `100px`)}; */
+  width: auto;
+  padding: 24px;
   position: relative;
-  background-color: rgb(249, 250, 251);
+  background-color: black;
+  color: white;
+  /* height: 100vh; */
 `;
 
-const Boxlogo = styled.div`
-  display: flex;
+export const SDivider = styled.div`
+  height: 1px;
+  width: 100%;
+  background: "rgb(50,50,50)";
+  margin: 24px 0;
 `;
-
-const Menu = styled.div`
-  display: flex;
-
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0px 0px 10px 0px;
+export const SLinkContainer = styled.div`
+  /* background: ${({ theme, isActive }) =>
+    !isActive ? `transparent` : theme.bg3}; */
+  border-radius: 6px;
+  /* margin: 8px 0; */
+  margin: 15px 0;
 
   :hover {
-    background-color: rgba(145, 158, 171, 0.16);
+    box-shadow: inset 0 0 0 1px rgb(50, 50, 50);
   }
 `;
-const Textmenu = styled.div`
-  display: ${(porps) => (porps.toogle ? "block" : "none")};
 
-  margin-top: 5px;
-  margin-left: 3px;
+export const SLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  padding: calc(8px - 2px) 0;
 `;
 
-const Boxmenu = styled.div`
+export const SLinkIcon = styled.div`
+  padding: 8px 16px;
   display: flex;
-  margin-left: 10px;
+
+  svg {
+    font-size: 20px;
+  }
 `;

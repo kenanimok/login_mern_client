@@ -205,7 +205,7 @@ const ReportPdf = (props) => {
               fontWeight: "400",
             }}
           >
-            {data?.map((item, index) => {
+            {arrayOfArrays[0]?.map((item, index) => {
               return (
                 <tr>
                   <td style={styleTableTd}>{index + 1}. </td>
