@@ -13,22 +13,22 @@ const Excelreport = () => {
         line_voids1: "58",
         line_voids2: "3333",
       });
-      newData.push({
-        pos: actorObj.pos,
-        line_type: "กลางวัน",
-        refund: "520",
-        line_voids: "100",
-        line_voids1: "99",
-        line_voids2: "136/35",
-      });
-      newData.push({
-        pos: actorObj.pos,
-        line_type: "เย็น",
-        refund: "900",
-        line_voids: "67",
-        line_voids1: "11",
-        line_voids2: "136/35",
-      });
+      //   newData.push({
+      //     pos: actorObj.pos,
+      //     line_type: "กลางวัน",
+      //     refund: "520",
+      //     line_voids: "100",
+      //     line_voids1: "99",
+      //     line_voids2: "136/35",
+      //   });
+      //   newData.push({
+      //     pos: actorObj.pos,
+      //     line_type: "เย็น",
+      //     refund: "900",
+      //     line_voids: "67",
+      //     line_voids1: "11",
+      //     line_voids2: "136/35",
+      //   });
     }
   });
 

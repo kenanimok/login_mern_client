@@ -27,7 +27,11 @@ export const Ftcolor = {
 export const ContainerColor = styled.div`
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  .large {
+    /* grid-column: 1/4; */
+  }
 `;
 export const Boxcolor = styled.div`
   position: relative;
@@ -71,6 +75,13 @@ export const Smtext = styled.p`
 `;
 
 export const Chartcard = styled.div`
+  /* position: relative; */
+  /* .center {
+    position: relative;
+    top: 20px;
+    left: 5%;
+  } */
+
   border-radius: 12px;
   margin: 10px;
   padding: 20px;
@@ -80,6 +91,6 @@ export const Chartcard = styled.div`
 
 export const ContainerChart = styled.div`
   display: grid;
-  grid-template-columns: 3.3fr 1.8fr;
+  grid-template-columns: 2fr 1fr;
   margin: 10px;
 `;

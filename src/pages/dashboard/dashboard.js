@@ -18,7 +18,7 @@ import { saveAs } from "file-saver";
 import { renderToString } from "react-dom/server";
 import jsPDF from "jspdf";
 import { columnsReport } from "./data";
-
+import Donutchart from "../../components/chart/piechart/piechart";
 const Dashboard = () => {
   return (
     <>
@@ -61,13 +61,9 @@ const Dashboard = () => {
           <Mixcharts />
         </Chartcard>
 
-        <Boxcolor boxcolor={Bgcolor.reds}>
-          <Circle cr={colors.reds}>
-            <FaFire size={30} color={Ftcolor.reds} />
-          </Circle>
-          <Textbox ftcolor={Ftcolor.reds}>714k</Textbox>
-          <Smtext>New Users</Smtext>
-        </Boxcolor>
+        <Chartcard>
+          <Donutchart />
+        </Chartcard>
       </ContainerChart>
     </>
   );

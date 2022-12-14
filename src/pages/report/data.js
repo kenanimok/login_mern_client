@@ -30,31 +30,35 @@ export const columns = [
 ];
 
 export const columnsReport = [
+  //   {
+  //     Header: "วันที่",
+  //     accessor: "meal",
+  //     enableRowSpan: true,
+  //   },
   {
-    Header: "วันที่",
-    accessor: "meal",
-    enableRowSpan: true,
+    Header: "ชื่อ",
+    accessor: "username",
   },
   {
-    Header: "มื้ออาหาร",
-    accessor: "meal",
+    Header: "ตำแหน่ง",
+    accessor: "role",
   },
   {
-    Header: "แคลอรี่ (kcal)",
-    accessor: "calorie",
+    Header: "สถานะ",
+    accessor: "enabled",
   },
-  {
-    Header: "ไขมัน (g)",
-    accessor: "fat",
-  },
-  {
-    Header: "โปรตีน (g)",
-    accessor: "protein",
-  },
-  {
-    Header: "คาร์โบไฮเดรต (g)",
-    accessor: "line_voids2",
-  },
+  //   {
+  //     Header: "ไขมัน (g)",
+  //     accessor: "fat",
+  //   },
+  //   {
+  //     Header: "โปรตีน (g)",
+  //     accessor: "protein",
+  //   },
+  //   {
+  //     Header: "คาร์โบไฮเดรต (g)",
+  //     accessor: "line_voids2",
+  //   },
 ];
 
 export const origData = [

@@ -12,6 +12,7 @@ import ReportPdf from "../reportPdf";
 import { columnsReport, origData } from "./data";
 const Reporthuman = () => {
   const [dataUser, setDatauser] = useState();
+  console.log("dataUser ===> ", dataUser);
   const ref = useRef();
 
   useEffect(() => {
@@ -35,19 +36,28 @@ const Reporthuman = () => {
   const newData = [];
   const mockData = () => {
     origData?.forEach((actorObj) => {
-      for (let i = 0; i < 3; i++) {
-        newData.push({
-          pos: actorObj.pos,
-          line_type: "กลางวัน",
-          refund: "37.5",
-          line_voids: "1111",
-          line_voids1: "2222",
-          line_voids2: "3333",
-        });
-      }
+      const body = {
+        pos: actorObj.pos,
+        line_type: "กลางวัน",
+        refund: "37.5",
+        line_voids: "1111",
+        line_voids1: "2222",
+        line_voids2: "3333",
+      };
+      // newData.push({
+      //   pos: actorObj.pos,
+      //   line_type: "กลางวัน",
+      //   refund: "37.5",
+      //   line_voids: "1111",
+      //   line_voids1: "2222",
+      //   line_voids2: "3333",
+      // });
+      newData.push(body);
+      // console.log("body===>", body);
     });
     return newData;
   };
+  console.log("mockdata===>", mockData());
 
   return (
     <>
@@ -65,7 +75,8 @@ const Reporthuman = () => {
           reportRef={ref}
           title={"รายงานการบริโภคอาหารรายบุคคลของ ภูริท บุญคงเจริญ"}
           date={"ข้อมูลวันที่ 15 มิถุนายน 2565 ถึง วันที่ 15 กรกฎาคม 2565"}
-          data={mockData()}
+          // data={mockData()}
+          data={dataUser}
           columns={columnsReport}
           type="consumption"
         />
