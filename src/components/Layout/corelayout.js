@@ -10,9 +10,11 @@ const Corelayout = () => {
       <Sidebar />
       <Container>
         <Header />
-        <Content>
-          <Outlet />
-        </Content>
+        <div style={{ padding: "15px 35px", height: "100%", overflow: "auto" }}>
+          <Content>
+            <Outlet />
+          </Content>
+        </div>
       </Container>
     </div>
   );
@@ -25,8 +27,9 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 70px auto;
   height: 100vh;
+  /* height: auto; */
 
-  @media only screen and (max-width: 1500px) {
+  /* @media only screen and (max-width: 1500px) {
     height: auto;
-  }
+  } */
 `;

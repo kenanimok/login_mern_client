@@ -41,13 +41,12 @@ const Sidebar = () => {
 
 export default Sidebar;
 const Sidenav = styled.div`
-  /* width: ${(props) => (props.toogle ? "300px" : `100px`)}; */
   width: auto;
   padding: 24px;
   position: relative;
   background-color: black;
   color: white;
-  /* height: 100vh; */
+  height: 100vh;
 `;
 
 export const SDivider = styled.div`

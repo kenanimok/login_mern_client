@@ -27,8 +27,8 @@ export const Ftcolor = {
 export const ContainerColor = styled.div`
   padding: 10px;
   display: grid;
-  /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   .large {
     /* grid-column: 1/4; */
   }
@@ -75,13 +75,6 @@ export const Smtext = styled.p`
 `;
 
 export const Chartcard = styled.div`
-  /* position: relative; */
-  /* .center {
-    position: relative;
-    top: 20px;
-    left: 5%;
-  } */
-
   border-radius: 12px;
   margin: 10px;
   padding: 20px;

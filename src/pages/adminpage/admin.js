@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-// import { columns } from "./data";
 import { Button, Table } from "antd";
 import { listUser } from "../../core/action/user";
 import { columns } from "./data";
-import Sidebar from "../../components/Layout/sidebar/sidebar";
 const Admin = () => {
   const [datauser, setDataUser] = useState();
   const { user } = useSelector((state) => ({ ...state }));
@@ -48,6 +46,7 @@ export default Admin;
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 50px;

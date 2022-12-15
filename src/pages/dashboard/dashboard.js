@@ -13,15 +13,10 @@ import {
 } from "./dashboard.style";
 
 import { colors, Bgcolor, Ftcolor } from "./dashboard.style";
-import * as XLSX from "xlsx-js-style";
-import { saveAs } from "file-saver";
-import { renderToString } from "react-dom/server";
-import jsPDF from "jspdf";
-import { columnsReport } from "./data";
 import Donutchart from "../../components/chart/piechart/piechart";
-const Dashboard = () => {
+const Dashboard = ({ height }) => {
   return (
-    <>
+    <div style={{ height: height ? height : "" }}>
       <ContainerColor>
         <Boxcolor boxcolor={Bgcolor.blues}>
           <Circle cr={colors.blues}>
@@ -65,7 +60,7 @@ const Dashboard = () => {
           <Donutchart />
         </Chartcard>
       </ContainerChart>
-    </>
+    </div>
   );
 };
 

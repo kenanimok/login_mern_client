@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-// import { Charts } from "./piechart.style";
 import Chart from "react-apexcharts";
 const Donutchart = () => {
   return (
@@ -105,10 +104,6 @@ const Charts = styled(Chart)`
     padding: 50px;
   }
   .apexcharts-tooltip {
-    /* color: #fff;
-  transform: translateX(10px) translateY(10px); */
-    /* overflow: visible !important; */
-    /* white-space: normal !important; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -122,5 +117,10 @@ const Charts = styled(Chart)`
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
+  }
+
+  .apexcharts-canvas {
+    position: absolute !important;
+    user-select: none;
   }
 `;
