@@ -83,6 +83,8 @@ export const Chartcard = styled.div`
 `;
 
 export const ContainerChart = styled.div`
+  /* position: relative; */
+
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin: 10px;

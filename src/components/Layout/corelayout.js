@@ -6,30 +6,25 @@ import Content from "./Content/Content";
 import styled from "styled-components";
 const Corelayout = () => {
   return (
-    <div style={{ display: "flex", backgroundColor: "" }}>
+    <div style={{ display: "flex", backgroundColor: "#f6f6f6" }}>
       <Sidebar />
-      <Container>
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "grid",
+          gridTemplateRows: "50px auto",
+        }}
+      >
         <Header />
-        <div style={{ padding: "15px 35px", height: "100%", overflow: "auto" }}>
+        <div style={{ padding: "35px", height: "100%", overflow: "auto" }}>
           <Content>
             <Outlet />
           </Content>
         </div>
-      </Container>
+      </div>
     </div>
   );
 };
 
 export default Corelayout;
-
-const Container = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-rows: 70px auto;
-  height: 100vh;
-  /* height: auto; */
-
-  /* @media only screen and (max-width: 1500px) {
-    height: auto;
-  } */
-`;

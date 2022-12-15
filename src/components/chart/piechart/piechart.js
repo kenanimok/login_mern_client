@@ -119,8 +119,8 @@ const Charts = styled(Chart)`
     font-size: 12px;
   }
 
-  .apexcharts-canvas {
+  /* .apexcharts-canvas {
     position: absolute !important;
     user-select: none;
-  }
+  } */
 `;

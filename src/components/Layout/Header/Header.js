@@ -10,4 +10,6 @@ const Header = () => {
 
 export default Header;
 const ContainerHead = styled.div`
-s`;
+  /* background-color: red;
+  height: 70px; */
+`;

@@ -1,0 +1,29 @@
+.sider {
+    display: flex;
+  }
+  
+  .text-menu {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 0 0 10px;
+    display: flex;
+    align-items: center;
+    height: 44px;
+  }
+    
+  .sub-sider-menu {
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .icon {
+    padding-right: 10px;
+    font-size: 28px;
+  }
+  .logo {
+    max-width: 40px;
+    display: flex;
+    justify-content: center;
+  }

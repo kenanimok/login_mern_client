@@ -15,6 +15,7 @@ import {
   AiOutlineSearch,
   AiOutlineSetting,
 } from "react-icons/ai";
+import "./sideer.css";
 const Sidebar = () => {
   const [toogle, setToogle] = useState(false);
 
@@ -23,64 +24,81 @@ const Sidebar = () => {
   };
 
   return (
-    <>
-      <Sidenav toogle={toogle} onClick={ontoogle}>
-        <SDivider>
-          <SLinkContainer>
-            <SLink to="/dashboard">
-              <SLinkIcon>
-                <AiOutlineSetting />
-              </SLinkIcon>
-            </SLink>
-          </SLinkContainer>
-        </SDivider>
-      </Sidenav>
-    </>
+    <Sidenave>
+      <div className="sider">
+        <div id="main" className="container">
+          <div className="row" id="row0"></div>
+        </div>
+      </div>
+      <div className="sider-menu">
+        <TextMenu collapAction={toogle}>ssss</TextMenu>
+      </div>
+    </Sidenave>
   );
 };
 
 export default Sidebar;
-const Sidenav = styled.div`
-  width: auto;
-  padding: 24px;
-  position: relative;
-  background-color: black;
-  color: white;
-  height: 100vh;
-`;
 
-export const SDivider = styled.div`
-  height: 1px;
-  width: 100%;
-  background: "rgb(50,50,50)";
-  margin: 24px 0;
-`;
-export const SLinkContainer = styled.div`
-  /* background: ${({ theme, isActive }) =>
-    !isActive ? `transparent` : theme.bg3}; */
-  border-radius: 6px;
-  /* margin: 8px 0; */
-  margin: 15px 0;
+const Sidenave = styled.div`
+  .sider-menu {
+    position: relative;
+    padding: 10px;
+    padding-top: 40px;
+    height: 100vh;
+    transition: 0.2s;
+    width: ${(props) => (props.collapAction ? "70px" : "180px")};
+    background: linear-gradient(345deg, #59d0da 50%, #00b7ad 62%);
+    color: black;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+  }
 
-  :hover {
-    box-shadow: inset 0 0 0 1px rgb(50, 50, 50);
+  .sub-sider-menu {
+    transition: 0.2s;
+    width: ${(props) => (props.subSiderMenu ? "0px" : "200px")};
+    transition: 0.5s;
+  }
+  .text-menu {
+    transition: color 0.2s;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+    :hover,
+    :focus,
+    &.selected {
+      background-color: rgba(255, 255, 255, 0.21);
+      color: #fff;
+    }
+    justify-content: ${(props) => (props.toogle ? "center" : "")};
+  }
+
+  .arrow {
+    right: -16px;
+    position: absolute;
+    bottom: 45px;
+    transition: 0.2s;
+    transform: ${(props) =>
+      props.collapAction ? "rotate(0deg)" : "rotate(-180deg)"};
   }
 `;
 
-export const SLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  padding: calc(8px - 2px) 0;
+const TextMenu = styled.span`
+  display: ${(props) => (props.toogle ? "none" : "block")};
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
 `;
 
-export const SLinkIcon = styled.div`
-  padding: 8px 16px;
-  display: flex;
-
-  svg {
-    font-size: 20px;
-  }
-`;
+// const BtCollap = styled(Button)`
+//   border: none;
+//   background: white;
+//   color: #00b7ad;
+//   :focus,
+//   :hover {
+//     background-color: white;
+//     color: #00b7ad;
+//   }
+// `;
