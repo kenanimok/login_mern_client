@@ -2,21 +2,43 @@ import React from "react";
 import { useContext, useState } from "react";
 import { useGlobalContext } from "../../core/context";
 import styled from "styled-components";
-import Box1 from "./Box1";
-import Box2 from "./Box2";
-import Box3 from "./Box3";
 import backgroundhelt from "../../components/image/bghelt.png";
 import { MyGlobalContext } from "../../core/context";
-import { Button } from "antd";
-import Form_ctrl from "./form_ctrl/form_ctrl";
+import { Steps, Button, Checkbox, Form, Input } from "antd";
+import { StarOutlined, StarFilled, StarTwoTone } from "@ant-design/icons";
+import LoginRegist from "./formregis/login-regis";
+import Profile from "./formregis/progfile";
+// const description = "This is a description.";
 
 const Register = () => {
-  const [stastusform, setStatusform] = useGlobalContext();
-  const [dataUser, setDataUser] = useState("");
+  const [current, setCurrent] = useState(0);
+  const [loginDetail, setLoginDetails] = useState();
+  const [progfile, setProfile] = useState();
 
-  const changeStatus = () => {
-    setStatusform("box2");
+  const onFinish = (values) => {
+    console.log("Success:", values);
+    setLoginDetails(values);
+    setCurrent(1);
   };
+
+  const onFinish_Profile = (values) => {
+    // console.log("Success:", values);
+    setProfile(values);
+    setCurrent(2);
+  };
+
+  const onFieldsChange = (values) => {
+    setLoginDetails(values);
+  };
+
+  const form = [
+    <LoginRegist
+      onFinish={onFinish}
+      initialValues={loginDetail}
+      // onFieldsChange={onFieldsChange}
+    />,
+    <Profile onFinish={onFinish_Profile} initialValues={progfile} />,
+  ];
 
   return (
     <Container>
@@ -25,15 +47,26 @@ const Register = () => {
         <h1>สร้างผู้ใช้งาน</h1>
         <Progress />
         <Boxform>
-          {stastusform === "default" ? (
-            <Form_ctrl />
-          ) : stastusform === "box2" ? (
-            <Box2 />
-          ) : (
-            <Box3 />
-          )}
+          <Steps
+            size="small"
+            current={current}
+            onChange={setCurrent}
+            items={[
+              {
+                title: "Waiting",
+              },
+              {
+                title: "In Progress",
+              },
+
+              {
+                title: "Finished",
+              },
+            ]}
+          />
+          {form[current]}
         </Boxform>
-        <Button onClick={changeStatus}>clickadd</Button>
+        {/* <Button onClick={changeStatus}>clickadd</Button> */}
       </LayoutForm>
     </Container>
   );
@@ -62,4 +95,6 @@ const Progress = styled.div`
   background-color: green;
 `;
 
-const Boxform = styled.div``;
+const Boxform = styled.div`
+  padding: 30px;
+`;
