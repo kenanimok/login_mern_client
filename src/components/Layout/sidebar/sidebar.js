@@ -46,11 +46,12 @@ const Sidenave = styled.div`
     padding-top: 40px;
     height: 100vh;
     transition: 0.2s;
-    width: ${(props) => (props.collapAction ? "70px" : "180px")};
-    background: linear-gradient(345deg, #59d0da 50%, #00b7ad 62%);
+    width: ${(props) => (props.collapAction ? "70px" : "80px")};
+    /* background: linear-gradient(345deg, #59d0da 50%, #00b7ad 62%); */
+    background-color: black;
     color: black;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    /* border-top-right-radius: 20px; */
+    /* border-bottom-right-radius: 20px; */
     text-align: center;
   }
 

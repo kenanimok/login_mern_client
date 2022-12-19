@@ -60,26 +60,6 @@ const Dashboard = ({ height }) => {
           <Donutchart />
         </Chartcard>
       </ContainerChart>
-
-      <ContainerChart>
-        <Chartcard>
-          <Mixcharts />
-        </Chartcard>
-
-        <Chartcard>
-          <Donutchart />
-        </Chartcard>
-      </ContainerChart>
-
-      <ContainerChart>
-        <Chartcard>
-          <Mixcharts />
-        </Chartcard>
-
-        <Chartcard>
-          <Donutchart />
-        </Chartcard>
-      </ContainerChart>
     </div>
   );
 };

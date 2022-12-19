@@ -7,12 +7,17 @@ import ProtectedRoute from "./routes/proteced.route";
 import Corelayout from "./components/Layout/corelayout";
 import Dashboard from "./pages/dashboard/dashboard";
 import Reporthuman from "./pages/report/reporthuman";
+import Register from "./pages/register/register";
+import Notfound from "./pages/404/notfound";
+import { TodoProvider } from "./core/context";
 import "./main.css";
 function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      //protect
+      <Route path="/register" element={<Register />} />
+      <Route path="*" element={<Notfound />} />
+
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<Corelayout />}>
           <Route path="/" element={<Navigate to="/dashboard" />} />

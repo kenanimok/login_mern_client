@@ -9,6 +9,7 @@ import { createStore } from "redux";
 import rootReducer from "./components/reducer";
 // import "antd/dist/antd.min.css";
 import "antd/dist/reset.css";
+import { TodoProvider } from "./core/context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = createStore(rootReducer);
@@ -16,9 +17,11 @@ const store = createStore(rootReducer);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <TodoProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </TodoProvider>
     </Provider>
   </React.StrictMode>
 );

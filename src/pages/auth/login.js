@@ -7,7 +7,9 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { error } from "../../components/modal/modalalert";
 import { success } from "../../components/modal/modalalert";
-const Login = () => {
+import { Link } from "react-router-dom";
+const Login = (data) => {
+  // console.log("data===>", data);
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -74,7 +76,9 @@ const Login = () => {
               ></Inputbox>
               <Conbtn>
                 <Button onClick={handleSubmit}>Login</Button>
-                <Button>Register</Button>
+                <Button>
+                  <Link to="/register">register</Link>
+                </Button>
               </Conbtn>
             </form>
           </FormBox>

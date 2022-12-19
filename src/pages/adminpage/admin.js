@@ -36,7 +36,6 @@ const Admin = () => {
 
       <Container>
         <Table columns={columns} dataSource={datauser} />
-        {/* <Boxglass /> */}
       </Container>
     </>
   );
