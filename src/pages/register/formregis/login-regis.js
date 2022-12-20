@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 
-const LoginRegist = ({ onFinish, initialValues }) => {
+const LoginRegist = ({ onFinish, initialValues, onValuesChange }) => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
@@ -15,11 +15,11 @@ const LoginRegist = ({ onFinish, initialValues }) => {
         wrapperCol={{
           span: 16,
         }}
-        // onFieldsChange={onFieldsChange	}
         initialValues={initialValues}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
+        onValuesChange={onValuesChange}
       >
         <Form.Item
           label="Username"

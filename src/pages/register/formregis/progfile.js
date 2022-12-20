@@ -20,8 +20,8 @@ const Profile = ({ onFinish, initialValues }) => {
       autoComplete="off"
     >
       <Form.Item
-        label="Username222"
-        name="username"
+        label="Profilename"
+        name="firstname"
         rules={[
           {
             required: true,

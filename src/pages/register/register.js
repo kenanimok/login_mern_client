@@ -8,12 +8,13 @@ import { Steps, Button, Checkbox, Form, Input } from "antd";
 import { StarOutlined, StarFilled, StarTwoTone } from "@ant-design/icons";
 import LoginRegist from "./formregis/login-regis";
 import Profile from "./formregis/progfile";
-// const description = "This is a description.";
 
 const Register = () => {
   const [current, setCurrent] = useState(0);
   const [loginDetail, setLoginDetails] = useState();
   const [progfile, setProfile] = useState();
+  const [allValues, setAllValues] = React.useState();
+  console.log("loginDetail===>", loginDetail);
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -22,20 +23,19 @@ const Register = () => {
   };
 
   const onFinish_Profile = (values) => {
-    // console.log("Success:", values);
     setProfile(values);
     setCurrent(2);
   };
 
-  const onFieldsChange = (values) => {
-    setLoginDetails(values);
+  const onValuesChange = (e) => {
+    setLoginDetails(e);
   };
 
   const form = [
     <LoginRegist
       onFinish={onFinish}
       initialValues={loginDetail}
-      // onFieldsChange={onFieldsChange}
+      onValuesChange={onValuesChange}
     />,
     <Profile onFinish={onFinish_Profile} initialValues={progfile} />,
   ];
